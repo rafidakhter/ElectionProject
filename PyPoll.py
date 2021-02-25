@@ -102,10 +102,12 @@ with open(file_to_load, 'r') as election_data:
     # 3. Print the total votes.
 
 total_votes = election.totalVotes
-
+o_T_V=f'Total Votes: {total_votes}\n'
 electionsummaryData = []
+line = '------------------------------------------\n'
 
-outputData=[]
+outputData = ['Election Results \n', line, o_T_V, line]
+
 
 for candidate in election.candidates:
     candidateVoteTotal = election.candidates[candidate].total
@@ -120,7 +122,7 @@ winner = electionsummaryData[0]
 vPercent = winner[0]
 vCount = winner[1]
 name = winner[2]
-line = '------------------------------------------\n'
+
 summary = (f'winner: {name} \nWinning Vote Count:{vCount}\nWinning Percentage: {vPercent}% votes\n')
 
 outputData.append(line)
