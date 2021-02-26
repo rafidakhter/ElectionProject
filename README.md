@@ -4,7 +4,7 @@
 
 Col. Uni - bootcamp module 3 Python election project
 
-# OverView:
+# Project Summary:
 
 This git repository is for a mock election vote counting algorithm created using python.
 
