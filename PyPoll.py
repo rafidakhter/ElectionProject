@@ -1,27 +1,10 @@
-
+#Instructions:
+#     Change line 140 and 141 to file input and output
 #Packages:
 
 import csv
 import os
 
-
-'''
-    Pseudocode.
-    The data wneed to be retrived
-    1. The total number o votes cast
-    2. A complete list of candidates who received votes
-    3. the percentage of votes of each candidate won
-    4. the total number of votes each candidate won
-    5. winner of the election
-    6. The voter turnout for each county
-    7. The percentage of votes for each county out of the total count
-    8. The county witht the hight turn out
-
-# Creating class for each object in the voting system
-    # Election -> total, candidates
-    # candidate -> total vote recieved, county where they are voted
-    # vote -> contain voter ID, county, candidate
-'''
 
 # voter class
 class Vote():
@@ -55,7 +38,7 @@ class Candidate():
 
         return percentage
         
-# Election     
+# Election CLass     
 class Election():
     
     def __init__(self):
@@ -83,7 +66,7 @@ class Election():
 # cast Vote
 def castVote(dataList):
     #excluding the headers
-    headers = next(dataList)
+    next(dataList)
 
     for data in dataList:
         vote = Vote(data[0], data[1], data[2])
@@ -142,7 +125,7 @@ def organizeOutputData(electionVoteSummary, countySummary,totalVotes):
         voteSummary += f'{data[2]}: Overall data: {data[0]}% ({data[1]})\n{line}county data:\n{ line}'
         for countyData in data[3]:
             voteSummary += f'{countyData}: {data[3][countyData]}, %votes= {round((data[3][countyData]/data[1])*100,2)}\n'
-
+        voteSummary += line
     # --------------------organizing winner data into ouput format --------------------#
     winner = electionVoteSummary[0]
     winnerSummary = (f'winner: {winner[2]} \nWinning Vote Count: {winner[1]}\nWinning Percentage: {winner[0]}% votes\n')
@@ -153,19 +136,21 @@ def organizeOutputData(electionVoteSummary, countySummary,totalVotes):
     return output
 # -----------------------------------------------------------Logic --------------------------------------------------------#
 
+#------------------------------------------------------------Define Inputs--------------------------------------------------#
+fileName = "election_results.csv"
+outputFileName = "election_analysis.txt"
+#----------------------------------------------------------------------------------------------------------------------------#
 # clearing election object.
 election = Election()
 
 #----------------------------------------------importing data from csv file-------------------------------------------------#
-file_to_load = os.path.join("Resources", "election_results.csv")
-
+file_to_load = os.path.join("Resources", fileName)
 
 with open(file_to_load, 'r') as election_data:
     dataList = csv.reader(election_data)
-    
 #----------------------------------------------casting all the votes ---------------------------------------------------------#
     castVote(dataList)
-
+#--------------------------------------------------------------------------------------------------------------------------------
 totalVotes=election.totalVotes
 #----------------------------------------------summararizing data from election ---------------------------------------------------------#
 electionVoteSummary = summarizeCandidateData(election)
@@ -175,10 +160,8 @@ countySummary = summarizeCountyData(election)
 output= organizeOutputData(electionVoteSummary,countySummary,totalVotes)
 
 print(output) # prints to the terminal
-#----------------------------------------------Organizing data  into output format ---------------------------------------------------------#
-# Create a filename variable to a direct or indirect path to the file.
-file_to_save = os.path.join("analysis", "election_analysis.txt")
-with open(file_to_save, "w") as txt_file:
+#----------------------------------------------Saving Summarized data in text file ---------------------------------------------------------#
 
-    # Write some data to the file.
+file_to_save = os.path.join("analysis", outputFileName)
+with open(file_to_save, "w") as txt_file:
     txt_file.write(output)

@@ -19,6 +19,7 @@ county data:
 Jefferson: 17963, %votes= 6.58
 Denver: 239282, %votes= 87.68
 Arapahoe: 15647, %votes= 5.73
+-------------------------------------
 Charles Casper Stockham: Overall data: 23.05% (85213)
 -------------------------------------
 county data:
@@ -26,6 +27,7 @@ county data:
 Jefferson: 19723, %votes= 23.15
 Denver: 57188, %votes= 67.11
 Arapahoe: 8302, %votes= 9.74
+-------------------------------------
 Raymon Anthony Doane: Overall data: 3.14% (11606)
 -------------------------------------
 county data:
@@ -33,6 +35,7 @@ county data:
 Jefferson: 1169, %votes= 10.07
 Denver: 9585, %votes= 82.59
 Arapahoe: 852, %votes= 7.34
+-------------------------------------
 
 -------------------------------------
 winner: Diana DeGette 
