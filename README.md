@@ -34,7 +34,7 @@ Total Votes: 369711
 
 ---
 
-[Diana DeGette:]()
+**Diana DeGette:**
 
 **Overall data:** 73.81% (272892)
 
@@ -46,7 +46,7 @@ Total Votes: 369711
 
 ---
 
-[Charles Casper Stockham:]()
+**Charles Casper Stockham:**
 
 **Overall data:** 23.05% (85213)
 
@@ -58,7 +58,7 @@ Total Votes: 369711
 
 ---
 
-[Raymon Anthony Doane:]()
+**Raymon Anthony Doane:**
 
 **Overall data:** 3.14% (11606)
 
@@ -90,10 +90,10 @@ The input to this script is the location to election votes data stored in a CSV 
 
 Each line in the CSV file is converted to a vote object and input to the election object' addVote method. The keeps track and updates all the information of the number of votes each candidate is receiving.
 
-The [PyPoll.py](http://pypoll.py) file can be used for any election by following the steps mentions below:
+The PyPoll.py file can be used for any election by following the steps mentions below:
 
 1. Save a .csv file containing the vote data in Resourses folder, and an output .txt file in analysis folder
-2. Change ''elction_result.csv" to the name of the CSV you will use in line 140 of the [PyPoll.py](http://pypoll.py) file and Change ''election_analysis.txt" to the text file you created
+2. Change ''elction_result.csv" to the name of the CSV you will use in line 140 of the PyPoll.py file and Change ''election_analysis.txt" to the text file you created
 
    Example: line 140 fileName = "example_output.csv"
 
